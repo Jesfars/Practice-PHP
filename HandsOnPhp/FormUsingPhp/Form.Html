@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        .container {
+          width: 400px;
+          padding: 20px;
+          background-color: #f1f1f1;
+          border-radius: 5px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-sizing: border-box;
+          transition: border-color 0.3s ease;
+        }
+        
+        input[type=text]:focus, input[type=password]:focus {
+          border-color: greenyellow;
+        }
+        
+        .signup {
+          background-color: greenyellow;
+          color: black;
+          padding: 10px 10px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+        }
+        
+        .signup:hover {
+          background-color: #ddd;
+        }
+        
+        label {
+          display: block;
+          margin-top: 10px;
+        }
+        
+        .log {
+          width: 100%;
+        }
+        
+        .radio-inline {
+          margin-right: 10px;
+        }
+        
+        hr {
+          margin: 20px 0;
+        }
+        
+        button {
+          background-color:#516ae6;
+          color: white;
+          padding: 10px 10px;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+          background-color: #1a0a87;
+        }
+        
+        .error {
+          color: red;
+          margin-top: 10px;
+        }
+    </style>
+        </head>
+        <body>
+        
+        <form action="Form.php" method="post">
+          <div class="container">
+            <h1>Hello</h1>
+            
+           
+            <hr>
+            <label for="firstName"><b>FirstName</b></label>
+            <input type="text" placeholder="Enter your Name" name="firstName" id="firstName" required>
+
+            <label for="lastName"><b>LastName</b></label>
+            <input type="text" placeholder="Enter your Name" name="lastName" id="lastName" required>
+
+
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <div>
+                <label for="male" class="radio-inline"
+                  ><input
+                    type="radio"
+                    name="gender"
+                    value="m"
+                    id="male"
+                  />Male</label
+                >
+                <label for="female" class="radio-inline"
+                  ><input
+                    type="radio"
+                    name="gender"
+                    value="f"
+                    id="female"
+                  />Female</label
+                >
+                <label for="others" class="radio-inline"
+                  ><input
+                    type="radio"
+                    name="gender"
+                    value="o"
+                    id="others"
+                  />Others</label>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter your Email" name="email" id="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Password" name="password" id="password" required>
+
+            <label for="mobileNumber"><b>mobile number</b></label>
+            <input type="text" placeholder="Enter your phone number" name="mobileNumber" id="mobileNumber" required>
+      
+            <br><br>
+            <CENTER>
+
+            <button>Submit</button>
+            
+        
+            </CENTER>
+           
+
+          </div>
+          
+         
+        </form>
+
+       
+        
+           
+        </body>
+    
+</html>

@@ -1,0 +1,38 @@
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "rationcard";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if Aadhar number is posted
+if (isset($_POST['aadhar_number'])) {
+    $aadharNumber = $_POST['aadhar_number'];
+    $sql = "SELECT * FROM ration_card_registrations WHERE aadhar_number = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $aadharNumber);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "Name: " . $row['user_name'] . "<br>";
+            echo "Family Name: " . $row['family_name'] . "<br>";
+            echo "Address: " . $row['address'] . "<br>";
+            echo "Pincode: " . $row['pincode'] . "<br>";
+            echo "Family Members: " . $row['family_members'] . "<br>";
+            echo "Job: " . $row['job'] . "<br>";
+        }
+    } else {
+        echo "No user found with this Aadhar number.";
+    }
+    $stmt->close();
+}
+?>
